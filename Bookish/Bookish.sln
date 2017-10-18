@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.16
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookish", "Bookish\Bookish.csproj", "{A46FCE4A-DFC1-4D5D-8F82-DDF929713716}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookish.data_access", "Bookish.data_access\Bookish.data_access.csproj", "{85231367-D507-4851-AF13-7A08493894DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{A46FCE4A-DFC1-4D5D-8F82-DDF929713716}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A46FCE4A-DFC1-4D5D-8F82-DDF929713716}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A46FCE4A-DFC1-4D5D-8F82-DDF929713716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85231367-D507-4851-AF13-7A08493894DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85231367-D507-4851-AF13-7A08493894DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85231367-D507-4851-AF13-7A08493894DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85231367-D507-4851-AF13-7A08493894DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8EFEC56A-F9C1-4168-A408-00DFD02953E0}
 	EndGlobalSection
 EndGlobal
