@@ -15,33 +15,30 @@ namespace Bookish
     {
         static void Main(string[] args)
         {
-            IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
-            string SqlString = "SELECT TOP 100 [UserID],[FirstName],[LastName],[UserName],[Password] FROM [Users]"; 
-            var ourUsers = (List<Users>)db.Query<Users>(SqlString);
-            foreach (var User in ourUsers)
+            var database = new Database();
+            List<Users> ourUsers = database.GetUserInformation();
+            foreach (var user in ourUsers)
             {
-                Console.WriteLine("UserID "+User.UserID);
-                Console.WriteLine("First Name "+User.FirstName);
-                Console.WriteLine("Last Name "+User.LastName);
-                Console.WriteLine("User Name "+User.UserName);
-                Console.WriteLine("Password "+User.Password);
+                Console.WriteLine("UserID "+user.UserID);
+                Console.WriteLine("First Name "+user.FirstName);
+                Console.WriteLine("Last Name "+user.LastName);
+                Console.WriteLine("User Name "+user.UserName);
+                Console.WriteLine("Password "+user.Password);
             }
-            string BookSqlString = "SELECT TOP 100 [BookID],[BookTitle],[Author] FROM [Books]";
-            var ourBooks = (List<Books>)db.Query<Books>(BookSqlString);
-            foreach (var Book in ourBooks)
+            List<Books> ourBooks = database.GetBookInformation();
+            foreach (var book in ourBooks)
             {
-                Console.WriteLine("Book " + Book.BookId);
-                Console.WriteLine("Book Title " + Book.BookTitle);
-                Console.WriteLine("Author " + Book.Author);
+                Console.WriteLine("Book " + book.BookId);
+                Console.WriteLine("Book Title " + book.BookTitle);
+                Console.WriteLine("Author " + book.Author);
             }
-            string CopySqlString = "SELECT TOP 100 [CopyID],[BookID],[PersonBorrowingID], [DueDate] FROM [Copy]";
-            var ourCopy = (List<Copy>)db.Query<Copy>(CopySqlString);
-            foreach (var Copy in ourCopy)
+            List<Copy> ourCopy = database.GetCopyInformation();
+            foreach (var copy in ourCopy)
             {
-                Console.WriteLine("Copy ID " + Copy.CopyID);
-                Console.WriteLine("Book ID " + Copy.BookID);
-                Console.WriteLine("Person Borrowing Book ID" + Copy.PersonBorrowingID);
-                Console.WriteLine("Due Date" + Copy.DueDate);
+                Console.WriteLine("Copy ID " + copy.CopyID);
+                Console.WriteLine("Book ID " + copy.BookID);
+                Console.WriteLine("Person Borrowing Book ID" + copy.PersonBorrowingID);
+                Console.WriteLine("Due Date" + copy.DueDate);
             }
                 Console.ReadLine();
         }

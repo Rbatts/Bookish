@@ -1,0 +1,24 @@
+﻿<head>
+    <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
+</head>
+@{
+    ViewBag.Title = "Library";
+
+}
+<h2>LibrarySearch</h2>
+<table>
+    <tr>
+        <th class="bookTableClass">Author</th>
+        <th class="bookTableClass">Book Title</th>
+        <th class="bookTableClass">Book ID</th>
+    </tr>
+
+@foreach (var book in ViewBag.Books)
+{
+    <tr>
+        <td class="bookTableClass">@book.Author</td>
+        <td class="bookTableClass">@book.BookTitle</td>
+        <td class="bookTableClass">@book.BookId</td>
+    </tr>
+}
+</table>
